@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para una mujer excepcional</title>
+    <style>
+        :root {
+            --vintage-paper: #fdfaf3;
+            --accent-gold: #c5a059;
+            --dark-text: #2c2c2c;
+            --soft-purple: #7d5a94; /* Color representativo del 8M */
+        }
+        body {
+            background-color: #eeebe3;
+            font-family: 'Garamond', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--dark-text);
+        }
+        .book-container {
+            width: 90%;
+            max-width: 500px;
+            background: var(--vintage-paper);
+            padding: 40px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+            border-left: 15px solid var(--soft-purple);
+            border-radius: 4px;
+            position: relative;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            font-family: inherit;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-weight: bold;
+            color: #888;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            color: var(--soft-purple);
+            border-bottom: 2px solid var(--soft-purple);
+        }
+        .content { display: none; line-height: 1.6; font-size: 1.1rem; }
+        .content.active { display: block; animation: fadeIn 0.8s; }
+        
+        .highlight { color: var(--soft-purple); font-weight: bold; }
+        .logic-note { font-family: 'Courier New', monospace; font-size: 0.9rem; color: #666; margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 10px; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<div class="book-container">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('historia')">La Lucha (8M)</button>
+        <button class="tab-btn" onclick="showTab('nosotros')">Tu Esencia</button>
+    </div>
+
+    <div id="historia" class="content active">
+        <p>Hoy es <span class="highlight">8 de marzo</span>, un día para reconocer la valentía de las mujeres que han reescrito la historia. Admiro tu mente crítica y esa forma en la que cuestionas el mundo.</p>
+        <p><i>"No deseo que las mujeres tengan poder sobre los hombres, sino sobre sí mismas."</i> — Mary Wollstonecraft.</p>
+    </div>
+
+    <div id="nosotros" class="content">
+        <p>Si la filosofía busca el porqué de las cosas, mi <span class="highlight">lógica</span> ha encontrado una respuesta constante en ti.</p>
+        <p>Me gusta cómo tu pensamiento vuela entre libros y conceptos, mientras yo trato de entender la estructura de todo. Admiro no solo a la mujer que lucha hoy, sino a la persona que me hace querer ser mejor cada día.</p>
+        <div class="logic-note">
+            // Error 404: Sentimientos no computables.<br>
+            // Resultado: Eres mi variable favorita.
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
